@@ -55,7 +55,7 @@ export default class User extends Model {
                     validate: {
                         isIn: [Object.values(EnumRoles)],
                     },
-                    defaultValue: EnumRoles.PATIENT,
+                    defaultValue: EnumRoles.DRIVER,
                 },
             },
             {

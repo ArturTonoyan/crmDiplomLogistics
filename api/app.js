@@ -3,6 +3,10 @@ import cookieParser from 'cookie-parser';
 import corsMiddleware from './middlewares/cors.js';
 import dbUtils from './utils/db.js';
 import authRoute from './routes/auth.js';
+import driverRoute from './routes/driver.js';
+import carRoute from './routes/car.js';
+import customerRoute from './routes/customer.js';
+import orderRoute from './routes/order.js';
 
 // import testUtil from './utils/test-data.js';
 
@@ -28,8 +32,9 @@ app.use(cookieParser());
 app.use(corsMiddleware);
 
 app.use('/auth', authRoute);
-// app.use('/patient', patientRoute);
-// app.use('/doctor', doctorsRoute);
-// app.use('/appointment', appointmentRoute);
+app.use('/driver', driverRoute);
+app.use('/car', carRoute);
+app.use('/customer', customerRoute);
+app.use('/order', orderRoute);
 
 app.listen(PORT, () => console.log(`Listen on :${PORT}`));

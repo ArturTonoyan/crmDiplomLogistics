@@ -1,8 +1,10 @@
 import { mapObjectKeys } from '../utils/map.js';
 
 const roles = {
-    DRIVER: 1,
-    ADMINISTRATOR: 2,
+    Создан: 1,
+    Подтвержден: 2,
+    Отклонен: 3,
+    Завершен: 4,
 };
 
 export default roles;
