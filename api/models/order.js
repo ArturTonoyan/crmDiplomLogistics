@@ -24,11 +24,11 @@ export default class Order extends Model {
                     allowNull: false,
                 },
                 loading: {
-                    type: DataTypes.DATEONLY,
+                    type: DataTypes.STRING,
                     allowNull: false,
                 },
                 unloading: {
-                    type: DataTypes.DATEONLY,
+                    type: DataTypes.STRING,
                     allowNull: false,
                 },
                 dateBegin: {
@@ -54,6 +54,10 @@ export default class Order extends Model {
                 volume: {
                     type: DataTypes.FLOAT,
                     allowNull: false,
+                },
+                price: {
+                    type: DataTypes.FLOAT,
+                    allowNull: true,
                 },
                 status: {
                     type: DataTypes.SMALLINT,
