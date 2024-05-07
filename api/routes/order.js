@@ -7,11 +7,27 @@ import roles from '../config/roles.js';
 
 const router = Router();
 
-// router
-//     .route('/getProfile')
-//     .get(authenticateToken, checkRole([roles.DRIVER, roles.ADMINISTRATOR]), asyncRoute(orderController.getProfile));
+router
+    .route('/getAllOrders')
+    .get(
+        authenticateToken,
+        asyncRoute(checkRole([roles.DRIVER, roles.ADMINISTRATOR])),
+        asyncRoute(orderController.getAllOrders)
+    );
 router
     .route('/createOrder')
-    .post(authenticateToken, checkRole([roles.DRIVER, roles.ADMINISTRATOR]), asyncRoute(orderController.createOrder));
+    .post(
+        authenticateToken,
+        asyncRoute(checkRole([roles.DRIVER, roles.ADMINISTRATOR])),
+        asyncRoute(orderController.createOrder)
+    );
+
+router
+    .route('/updateOrder')
+    .post(
+        authenticateToken,
+        asyncRoute(checkRole([roles.DRIVER, roles.ADMINISTRATOR])),
+        asyncRoute(orderController.updateOrder)
+    );
 
 export default router;

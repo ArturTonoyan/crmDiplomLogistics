@@ -19,12 +19,4 @@ export default function () {
 
     Driver.hasOne(Order);
     Order.belongsTo(Driver);
-    // Order.hasOne(Customer);
-    // Customer.belongsTo(Order);
-
-    // Order.hasOne(Car);
-    // Car.belongsTo(Order);
-
-    // Order.hasOne(Driver);
-    // Driver.belongsTo(Order);
 }

@@ -9,9 +9,17 @@ const router = Router();
 
 router
     .route('/getAllCars')
-    .get(authenticateToken, checkRole([roles.DRIVER, roles.ADMINISTRATOR]), asyncRoute(carController.getAllCars));
+    .get(
+        authenticateToken,
+        asyncRoute(checkRole([roles.DRIVER, roles.ADMINISTRATOR])),
+        asyncRoute(carController.getAllCars)
+    );
 router
     .route('/createCar')
-    .post(authenticateToken, checkRole([roles.DRIVER, roles.ADMINISTRATOR]), asyncRoute(carController.createCar));
+    .post(
+        authenticateToken,
+        asyncRoute(checkRole([roles.DRIVER, roles.ADMINISTRATOR])),
+        asyncRoute(carController.createCar)
+    );
 
 export default router;

@@ -9,12 +9,16 @@ const router = Router();
 
 router
     .route('/getProfile')
-    .get(authenticateToken, checkRole([roles.DRIVER, roles.ADMINISTRATOR]), asyncRoute(driverController.getProfile));
+    .get(
+        authenticateToken,
+        asyncRoute(checkRole([roles.DRIVER, roles.ADMINISTRATOR])),
+        asyncRoute(driverController.getProfile)
+    );
 router
     .route('/updateProfile')
     .post(
         authenticateToken,
-        checkRole([roles.DRIVER, roles.ADMINISTRATOR]),
+        asyncRoute(checkRole([roles.DRIVER, roles.ADMINISTRATOR])),
         asyncRoute(driverController.updateProfile)
     );
 

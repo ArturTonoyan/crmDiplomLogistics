@@ -57,7 +57,7 @@ export default class Order extends Model {
                 },
                 price: {
                     type: DataTypes.FLOAT,
-                    allowNull: true,
+                    allowNull: false,
                 },
                 status: {
                     type: DataTypes.SMALLINT,

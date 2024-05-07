@@ -11,14 +11,14 @@ router
     .route('/createCustomer')
     .post(
         authenticateToken,
-        checkRole([roles.DRIVER, roles.ADMINISTRATOR]),
+        asyncRoute(checkRole([roles.DRIVER, roles.ADMINISTRATOR])),
         asyncRoute(customerController.createCustomer)
     );
 router
     .route('/getAllCustomers')
     .get(
         authenticateToken,
-        checkRole([roles.DRIVER, roles.ADMINISTRATOR]),
+        asyncRoute(checkRole([roles.DRIVER, roles.ADMINISTRATOR])),
         asyncRoute(customerController.getAllCustomers)
     );
 
