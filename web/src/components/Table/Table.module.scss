@@ -6,10 +6,15 @@
   display: flex;
 
   .TableInner {
-    background-color: var(--light-grey-color);
-
+    width: 100vw;
+    margin: 0 64px;
+    th {
+      background-color: var(--tableTdBg);
+    }
     td {
+      background-color: var(--tableTdBg);
       text-align: center;
+      padding: 10px;
     }
   }
 }
