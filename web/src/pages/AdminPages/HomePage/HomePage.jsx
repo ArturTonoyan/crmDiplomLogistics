@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./HomePage.module.scss";
 import Table from "../../../components/Table/Table";
+import HeadMenu from "../../../components/HeadMenu/HeadMenu";
+import DataContext from "../../../context";
+import Header from "../../../components/Header/Header";
 function HomePage() {
+  const { context } = React.useContext(DataContext);
+
   return (
     <div className={styles.HomePage}>
-      <div className={styles.HeadMenu}>
-        <button>Создать заказ</button>
-        <button>Редактировать заказ</button>
-        <button>Удалить заказ</button>
-        <button>Добавить водителя</button>
-        <button>Добавить машину</button>
-        <button>Добавить клиента</button>
-      </div>
+      <Header />
+      <HeadMenu
+        state={"home"}
+        setFiltredData={context.setTableData}
+        filtredData={context.tableData}
+      />
 
       <div className={styles.Table}>
         <Table />

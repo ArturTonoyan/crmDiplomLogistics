@@ -2,28 +2,26 @@
 @import "./../../../styles/mixins.scss";
 
 .HomePage {
- .HeadMenu{
-  display: flex;
-  margin-bottom: 50px;
-  background-color: var(--gray-color);
-  padding: 15px;
-  @include container;
-  button{
-    margin: 0 10px;
-    @include button(var(--turquoise-color));
+  padding: 32px 64px;
+  .HeadMenu {
+    display: flex;
+    margin-bottom: 50px;
+    background-color: var(--gray-color);
+    padding: 15px;
+    @include container;
+    button {
+      margin: 0 10px;
+      @include button(var(--turquoise-color));
+    }
   }
- }
 }
-.Table{
+.Table {
   width: 100%;
   display: flex;
-  
-  .TableInner{
+
+  .TableInner {
     background-color: var(--light-grey-color);
-    thead{
-     
-    }
-    td{
+    td {
       text-align: center;
     }
   }

@@ -5,12 +5,16 @@ import Register from "./pages/Login/Register/Register";
 import HomePage from "./pages/AdminPages/HomePage/HomePage";
 import DataContext from "./context";
 import { testData } from "./DataApi";
+import "./styles/style.css";
 
 function App() {
-  const [tableData, setTableData] = useState(testData);
+  const [tableData, setTableData] = useState(testData); // данные таблицы
+  const [selectedTr, setSelectedTr] = useState(null); // выбранная строка
   const context = {
     tableData,
     setTableData,
+    selectedTr,
+    setSelectedTr,
   };
 
   return (
