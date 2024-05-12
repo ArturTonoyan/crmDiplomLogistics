@@ -12,6 +12,9 @@
     margin: 0 10px;
     @include button(var(--turquoise-color));
   }
+  button:hover{
+    cursor: pointer;
+  }
  }
 }
 .Table{
