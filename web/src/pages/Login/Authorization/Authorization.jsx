@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Authorization.module.scss";
-
+import { Link } from "react-router-dom";
 function Authorization() {
   const [formData, setFormData] = useState({
     login: "",
@@ -28,7 +28,7 @@ function Authorization() {
     <div className={styles.AuthorRegistrar}>
       <div className={styles.box}>
         <div className={styles.container}>
-          <h2>Вход в аккаунт Регистратора</h2>
+          <h2>Вход в аккаунт</h2>
           <input
             type="text"
             placeholder="Логин"
@@ -43,11 +43,16 @@ function Authorization() {
             value={formData.password}
             onChange={handleInputChange}
           />
-
+          <Link to="/HomePage">
           <button className={styles.button} >
             Войти
           </button>
-        
+          </Link>
+          <Link to="/Register">
+            <button className={styles.buttonReg} >
+              Зарегестрироваться
+            </button>
+          </Link>
         </div>
       </div>
     </div>

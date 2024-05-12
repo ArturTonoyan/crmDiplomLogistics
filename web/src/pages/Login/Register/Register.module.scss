@@ -1,7 +1,11 @@
-@import "./../../styles/color.scss";
-@import "./../../styles/mixins.scss";
+@import "./../../../styles/color.scss";
+@import "./../../../styles/mixins.scss";
 
 .AuthorRegistrar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
   .box {
     padding: 36px 106px;
     background-color: var(--white-color);
@@ -11,7 +15,7 @@
       margin: 0 auto;
       @include flexbox-center(17px);
       flex-direction: column;
-      position: relative;
+
       h2 {
         width: 100%;
         @include flexbox-center(0);
@@ -23,19 +27,13 @@
         margin-bottom: 15px;
       }
 
-      .button {
+      .buttonRegister {
         @include button(var(--turquoise-color));
       }
-      .ClientAuthLink{
-        position: absolute;
-        right: -85px;
-        bottom: -45px;
-        color: var(  --turquoise-color);
-        transition: 0.15s linear all;
-      }
-      .ClientAuthLink:hover{
-        cursor: pointer;
-        opacity: 0.6;
+
+      .buttonIn{
+        margin-top: 15px;
+        @include button(var(--gray--button--color));
       }
     }
   }
