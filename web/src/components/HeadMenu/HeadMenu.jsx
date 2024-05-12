@@ -7,18 +7,7 @@ function HeadMenu({ state, setFiltredData, filtredData }) {
   const { context } = useContext(DataContext);
   const accessToken = localStorage.getItem("accessToken");
 
-  const deletePatien = () => {
-    // deleteAppointment(accessToken, context.selectedTr).then((res) => {
-    //   if (res.status === 200) {
-    //     alert("Пользователь удален");
-    //     setFiltredData(
-    //       filtredData.filter((item) => item.id !== context.selectedTr)
-    //     );
-    //     context.setSelectClient(null);
-    //     sessionStorage.setItem("idClientSelect", null);
-    //   } else alert("Произошла ошибка");
-    // });
-  };
+  const deletePatien = () => {};
   console.log(
     "d",
     context.selectedTr,
@@ -36,19 +25,19 @@ function HeadMenu({ state, setFiltredData, filtredData }) {
           <Link to={flag && "./../Registrar/OutpatientCard"}>
             <button>
               <img src="./img/View.png" alt="View" />
-              Создать заказ
+              Создать
             </button>
           </Link>
-          <Link to={flag && "./EditPatient"}>
+          <Link to={flag && "./EditOrder"}>
             <button>
               <img src="./img/Edit.png" alt="View" />
-              Редактировать заказ
+              Редактировать
             </button>
           </Link>
           <Link to={flag && "./MakeAppointmentRegistrar"}>
             <button>
               <img src="./img/File_dock.png" alt="View" />
-              Удалить заказ
+              Удалить
             </button>
           </Link>
           <Link to="./../Registrar/PatientRegistr">

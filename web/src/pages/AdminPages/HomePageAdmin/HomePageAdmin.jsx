@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./HomePage.module.scss";
+import styles from "./HomePageAdmin.module.scss";
 import Table from "../../../components/Table/Table";
 import HeadMenu from "../../../components/HeadMenu/HeadMenu";
 import DataContext from "../../../context";
 import Header from "../../../components/Header/Header";
-function HomePage() {
+function HomePageAdmin() {
   const { context } = React.useContext(DataContext);
 
   return (
@@ -23,4 +23,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default HomePageAdmin;

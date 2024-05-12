@@ -43,15 +43,11 @@ function Authorization() {
             value={formData.password}
             onChange={handleInputChange}
           />
-          <Link to="/HomePage">
-          <button className={styles.button} >
-            Войти
-          </button>
+          <Link to="/AdminPage">
+            <button className={styles.button}>Войти</button>
           </Link>
           <Link to="/Register">
-            <button className={styles.buttonReg} >
-              Зарегестрироваться
-            </button>
+            <button className={styles.buttonReg}>Зарегестрироваться</button>
           </Link>
         </div>
       </div>
