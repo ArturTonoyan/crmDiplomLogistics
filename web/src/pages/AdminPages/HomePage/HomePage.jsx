@@ -3,10 +3,11 @@ import styles from "./HomePage.module.scss"
 import { Link } from "react-router-dom";
 import Table from "./Table";
 import { tableHead, testData} from "./Data";
+import PopUpNew from "../../../components/ PopUpNew/ PopUpNew";
 function HomePage() {
     const [tableHeader, settebleHeader] = useState([])
     const [tableData, settableData] = useState([])
-
+    const [PopUpNewOpen, setPopUpNewOpen] = useState(false)
     useEffect(()=>{
         settebleHeader(tableHead)
         settableData(testData)
@@ -16,7 +17,7 @@ function HomePage() {
          
         <div className={styles.HeadMenu}>
          
-            <button>
+            <button onClick={(()=>setPopUpNewOpen(!PopUpNewOpen))}>
                 Создать заказ
             </button>
             <button>
@@ -42,9 +43,10 @@ function HomePage() {
                 tableData={tableData}
             />
           </div>
-
+        {PopUpNewOpen && <PopUpNew/>}
         </div>
       );
     }
+    
 
 export default HomePage;
