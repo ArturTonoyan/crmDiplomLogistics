@@ -3,18 +3,28 @@
 
 .EditPatient {
   width: 100%;
+  box-sizing: border-box;
   @include container;
   margin-top: 15px;
   .data_container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     @include font(21px, 700);
   }
   .leftbox {
     display: flex;
     flex-direction: column;
-    margin-right: 80px;
 
+    input {
+      @include input-text(382px, 8px);
+      margin: 5px;
+      margin-left: 0;
+    }
+  }
+  .centerbox {
+    display: flex;
+    flex-direction: column;
     input {
       @include input-text(382px, 8px);
       margin: 5px;
