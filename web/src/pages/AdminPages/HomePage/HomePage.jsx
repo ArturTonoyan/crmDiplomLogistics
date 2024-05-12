@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./HomePage.module.scss";
-import { tableHead, testData } from "./Data";
 import Table from "../../../components/Table/Table";
 function HomePage() {
-  const [tableHeader, settebleHeader] = useState([]);
-  const [tableData, settableData] = useState([]);
-
-  useEffect(() => {
-    settebleHeader(tableHead);
-    settableData(testData);
-  }, []);
   return (
     <div className={styles.HomePage}>
       <div className={styles.HeadMenu}>
@@ -22,7 +14,7 @@ function HomePage() {
       </div>
 
       <div className={styles.Table}>
-        <Table tableHeader={tableHeader} tableData={tableData} />
+        <Table />
       </div>
     </div>
   );

@@ -1,6 +1,11 @@
 import React from "react";
 import styles from "./Table.module.scss";
-function Table({ tableData, tableHeader }) {
+import { tableHead } from "./Data";
+import DataContext from "../../context";
+function Table() {
+  const { context } = React.useContext(DataContext);
+
+  const tableHeader = tableHead;
   console.log(tableHeader);
 
   return (
@@ -14,7 +19,7 @@ function Table({ tableData, tableHeader }) {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((row, index) => (
+          {context.tableData.map((row, index) => (
             <tr key={index}>
               {tableHeader.map((headerItem) => (
                 <td key={headerItem.key}>{row[headerItem.key]}</td>
