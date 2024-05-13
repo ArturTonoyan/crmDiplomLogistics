@@ -8,6 +8,11 @@ function Table() {
   const tableHeader = tableHead;
   console.log(tableHeader);
 
+  const trClick = (row) => {
+    console.log(row.id);
+    context.setSelectedTr(row.id);
+  };
+
   return (
     <div className={styles.Table}>
       <table className={styles.TableInner}>
@@ -20,7 +25,13 @@ function Table() {
         </thead>
         <tbody>
           {context.tableData.map((row, index) => (
-            <tr key={index}>
+            <tr
+              key={index}
+              onClick={() => trClick(row)}
+              className={
+                context.selectedTr === row.id ? styles.setectedTr : null
+              }
+            >
               {tableHeader.map((headerItem) => (
                 <td key={headerItem.key}>{row[headerItem.key]}</td>
               ))}
